@@ -1,14 +1,17 @@
-// Require http header
-var http = require('http');
+// Filename: index.js 
 
-// Create server
-http.createServer(function (req, res) {
+const calculator = require('./calculator');
 
-	// HTTP Status: 200 : OK
-	// Content Type: text/html
-	res.writeHead(200, {'Content-Type': 'text/html'});
-	
-	// Send the response body as "Hello World!" 
-	res.end('Hello World!');
+let x = 50, y = 10;
 
-}).listen(8080);
+console.log("Addition of 50 and 10 is "
+             + calculator.add(x, y));
+
+console.log("Subtraction of 50 and 10 is "
+             + calculator.sub(x, y));
+
+console.log("Multiplication of 50 and 10 is "
+             + calculator.mult(x, y));
+
+console.log("Division of 50 and 10 is "
+             + calculator.div(x, y));
