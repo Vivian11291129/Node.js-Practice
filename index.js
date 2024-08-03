@@ -1,17 +1,11 @@
-// Filename: index.js 
+const express = require('express');
+const app = express();
+const port = 3000;
 
-const calculator = require('./calculator');
+app.get('/', (req, res) => {
+  res.send('Hello World!12345');
+});
 
-let x = 50, y = 10;
-
-console.log("Addition of 50 and 10 is "
-             + calculator.add(x, y));
-
-console.log("Subtraction of 50 and 10 is "
-             + calculator.sub(x, y));
-
-console.log("Multiplication of 50 and 10 is "
-             + calculator.mult(x, y));
-
-console.log("Division of 50 and 10 is "
-             + calculator.div(x, y));
+app.listen(port, () => {
+  console.log(`Example app listening at http://localhost:${port}`);
+});
